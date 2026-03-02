@@ -12,32 +12,8 @@
 			},
 			{
 				"inputs": [],
-				"name": "InvalidAddress",
-				"type": "error"
-			},
-			{
-				"inputs": [],
 				"name": "NotAllowed",
 				"type": "error"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
 			},
 			{
 				"anonymous": false,
@@ -61,36 +37,23 @@
 						"type": "uint256"
 					}
 				],
-				"name": "ValueSet",
+				"name": "UpdatedNumber",
 				"type": "event"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "key",
+						"name": "",
 						"type": "string"
 					}
 				],
-				"name": "getValue",
+				"name": "keyToNumber",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -113,19 +76,6 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -141,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/KeyNumberStore.sol": "KeyNumberStore"
+			"contracts/KeyNumberStore.sol": "NumberSt"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -156,11 +106,11 @@
 	},
 	"sources": {
 		"contracts/KeyNumberStore.sol": {
-			"keccak256": "0x7a1b50d305f8cad12b1465956ca750776822100db32efbe6c8ebd920177d4ffa",
+			"keccak256": "0xc0449a22656d274b1574fb0c64e3cef2e824e1fe589e8310b010e8561890813d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bacc1cd4e645c63fe0c77a8022bafe8b786303e5881f216aa06b69bf4925d88d",
-				"dweb:/ipfs/Qma9HHppeQsD9BsNi1L5wkzAWJbfhbGbvCDFGrHZgBUakq"
+				"bzz-raw://e0be2869685f2986769ffb2cdecb49f245df37085661958b559eb68b3c69ad53",
+				"dweb:/ipfs/QmWQPG2fxUmebEcWm4vUi859uCsxCCVjmErggG9YLFto7i"
 			]
 		}
 	},

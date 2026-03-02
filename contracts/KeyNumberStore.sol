@@ -4,10 +4,11 @@ pragma solidity 0.8.28;
 
 contract KeyNumberStore {
 
-    address private immutable owner;
-    mapping(string => uint256) public keyToNumber;
+    address public owner;
+    mapping(string => uint256) private keyToNumber;
 
     error NotAllowed();
+    error InvalidAddress();
 
     constructor() {
         owner = msg.sender;
@@ -18,11 +19,23 @@ contract KeyNumberStore {
         _;
     }
 
-    event UpdatedNumber(string indexed key, uint256 number, uint256 timestamp);
+    event ValueSet(string indexed key, uint256 number, uint256 timestamp);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     function storeNumber(string calldata key, uint256 num) external onlyOwner {
         keyToNumber[key] = num;
-        emit UpdatedNumber(key, num, block.timestamp);
+        emit ValueSet(key, num, block.timestamp);
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        if(newOwner == address(0)) revert InvalidAddress();
+        address previousOwner = owner;
+        owner = newOwner;
+        emit OwnershipTransferred(previousOwner, newOwner);
+    }
+
+    function getValue(string calldata key) external view returns(uint256) {
+        return keyToNumber[key];
     }
 
 }
