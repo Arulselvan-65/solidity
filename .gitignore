@@ -1,2 +1,7 @@
-.prettierrc.json
-remix.config.json
+
+*
+
+!contracts/
+!contracts/**
+
+!.gitignore
